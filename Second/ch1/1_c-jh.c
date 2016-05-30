@@ -16,16 +16,30 @@
 
 int add(int n,int m)
 {
-  int i=0,j=1,t=1;
 
-  if(n==1)
+  int i=0,j=0,k=0;
+  int count = 0;
+  int arr[100]={0,};
+
+  for(i=0;i<m;i++)
+    arr[i]=i+1;
+
+  for(i=0;i<m;i++)
   {
-    ...
+    for(j=0;j<m;j++)
+    {
+      for(k=0;k<m;k++)
+      {
+        if((arr[i]+arr[j]+arr[k])==n)
+        {
+          printf("%d %d %d\n",arr[i],arr[j],arr[k]);
+          count++;
+        }
+      }
+    }
   }
-  for(i=1;i<=n-m-1;i++)
-  {
-    if(n-1)
-  }
+
+  return count;
 }
 
 
@@ -36,5 +50,5 @@ int main()
   scanf("%d",&n);
   printf("input m : ");
   scanf("%d",&m);
-
+  printf("\nTotal Count : %d\n",add(n,m));
 }
